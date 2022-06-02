@@ -58,9 +58,6 @@ io.use((socket, next) => {
 }).on('connection', (socket) => messageWebSocket(io, socket))
 io.of('chat').on('connection', (socket) => messageWebSocket(io, socket))
 /** Create Peer */
-const { PeerServer } = require('peer')
-const router = require('./routes/groupMessage')
-const peerServer = PeerServer({ port: 9000, path: '/chat' })
 /** Get port from environment and store in Express. */
 /** Listen on provided port, on all network interfaces. */
 server.listen(port)
